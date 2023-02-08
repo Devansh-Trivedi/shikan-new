@@ -38,9 +38,18 @@ var firebaseConfig = {
       }
   });
 
-  // $("#btn-logout").click(function(){
-  //   firebase.auth().signOut();
-  // });
+  $("#btn-logout").click(function(){
+    alert("Hello")
+    signOut(auth).then(()=>{
+      alert('Logout Success')
+    }).catch((error)=>{
+      const errorCode = error.code;
+      const errorMsg = error.message;
+      
+      alert(errorMsg);
+      console.log(errorCode)
+    })
+  });
 
 
 $("#btn-signup").click(function(){
